@@ -8,7 +8,7 @@
 				<img ng-src="{{ album.imageUrl }}">
 				<div class="caption">
 					<h5>
-						<a ng-click="viewAlbum(album._id)" ui-sref="albums({_id: '56201179a11ab7c410c13f4a'})">{{ album.name }}</a>
+						<a ui-sref="singleAlbum({_id: album._id})">{{ album.name }}</a>
 					</h5>
 					<small>{{ album.songs.length }} songs</small>
 				</div>

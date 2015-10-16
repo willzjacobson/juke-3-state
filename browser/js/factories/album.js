@@ -10,6 +10,7 @@ app.factory('AlbumFactory', function ($http, SongFactory) {
 		});
 	};
 	AlbumFactory.fetchById = function (id) {
+		console.log("id to the factory is:", id)
 		return $http.get('/api/albums/' + id)
 		.then(function (response) {
 			return response.data;

@@ -1,5 +1,6 @@
 app.factory('ArtistFactory', function ($http, $q, AlbumFactory, SongFactory) {
 	var ArtistFactory = {};
+
 	ArtistFactory.fetchAll = function () {
 		return $http.get('/api/artists')
 		.then(function (response) {
@@ -7,6 +8,7 @@ app.factory('ArtistFactory', function ($http, $q, AlbumFactory, SongFactory) {
 		});
 	};
 	ArtistFactory.fetchById = function (id) {
+		console.log("fetchById been called yo with ID", id);
 		var url = '/api/artists/' + id;
 		return $q.all([$http.get(url), $http.get(url + '/songs'), $http.get(url + '/albums')])
 		.then(function (arr) {
